@@ -8,5 +8,4 @@
 [core]
 	editor = code
 [alias]
-	acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
-
+	acp = "!f() { git commit -a -m \"$@\" && git push; }; f"
