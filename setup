@@ -1,0 +1,63 @@
+sudo visudo
+clear
+sudo ls
+exit
+sudo ls
+clear
+sudo nano /etc/apt/apt.conf.d/90forceyes
+clear
+sudo apt install zsh
+sudo apt update && sudo apt upgrade
+sudo apt install zsh
+sudo apt update && sudo apt upgrade
+sudo chsh -s $(which zsh)
+exit
+sudo apt install powerline fonts-powerline fonts-font-awesome 
+chsh -s $(which zsh)
+which zsh
+chsh -s /bin/sh
+chsh -s /bin/zsh
+shell
+$
+/bin/zsh
+exit
+: 1586264004:0;clear
+: 1586265361:0;sudo apt install git
+: 1586265445:0;git clone git@github.com:noahkiss/dotfiles.git
+: 1586265454:0;git --help
+: 1586265486:0;git config --global user.name "Noah Kiss"
+: 1586265493:0;git config --global user.email "noah@noahkiss.com"
+: 1586265575:0;ssh-keygen -t rsa -b 4096 -C "noah@noahkiss.com"
+: 1586265584:0;clear
+: 1586265585:0;ls -la
+: 1586265593:0;cd .ssh
+: 1586265594:0;ls
+: 1586265601:0;cd ..
+: 1586265603:0;cd .rsa
+: 1586265609:0;ls -la | rsa
+: 1586265615:0;ls -la | grep rsa
+: 1586265622:0;cat github_rsa.pub
+: 1586266010:0;git clone git@github.com:noahkiss/dotfiles.git
+: 1586266090:0;nano .ssh/config
+: 1586266148:0;mv github_rsa* .ssh/
+: 1586266158:0;git clone git@github.com:noahkiss/dotfiles.git
+: 1586266161:0;ls
+: 1586266653:0;clear
+: 1586266678:0;git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+: 1586266714:0;cp dotfiles/.zshrc ./.zshrc
+: 1586266730:0;cp dotfiles/.p10k.zsh.ubuntu ./.p10k.zsh
+: 1586266731:0;clear
+: 1586266852:0;git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
+: 1586266858:0;git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/.
+: 1586266867:0;git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+: 1586266904:0;git clone git@github.com:zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+: 1586266938:0;git clone git@github.com:lukechilds/zsh-nvm.git ~/.oh-my-zsh/custom/plugins/zsh-nvm
+: 1586266979:0;git clone --depth=1 git@github.com:romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+: 1586266984:0;exit
+: 1586266999:0;nvm install --lts
+: 1586267218:0;git clone --depth=1 git@github.com:ryanoasis/nerd-fonts.git ~/.nerd-fonts
+: 1586317439:0;gedit .zsh_history
+: 1586317667:0;cat .ssh/config
+: 1586317832:0;gedit .bash_history
+: 1586317968:0;cat .bash_history > ~/dotfiles/setup
+: 1586317977:0;cat .zsh_history >> ~/dotfiles/setup
