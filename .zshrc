@@ -77,25 +77,44 @@ fi
 # --- start Better LS ---
 # modified from https://www.topbug.net/blog/2016/11/28/a-better-ls-command/
 # created for macOS / zsh
-if eval "$(dircolors 2>/dev/null)"; then
-  eval "$(gdircolors)"
-fi
 
-export COLUMNS  # Remember columns for subprocesses.
+# if eval "$(dircolors 2>/dev/null)"; then
+#   eval "$(gdircolors)"
+# fi
 
+# export COLUMNS  # Remember columns for subprocesses.
+
+# unset -f ls gls
+# unalias ls
+# function ls {
+#   if [ $# -gt 1 ]; then
+#     # usage: ls [dir] [search term]
+#     # ex. ls ~/Desktop pdf
+#     # will show all files containing PDF
+#     command gls -Flagh --color=always -v --author --time-style=long-iso "$1" | grep -i "$2" | less -R -X -F
+#   else
+#     # any other number of inputs will just act normally
+#     command gls -Flagh --color=always -v --author --time-style=long-iso "$@" | less -R -X -F
+#   fi
+# }
+
+# try exa instead
+unset -f ls gls 2>/dev/null
 unalias ls
-alias ls="gls"
-function gls {
+function ls {
   if [ $# -gt 1 ]; then
     # usage: ls [dir] [search term]
     # ex. ls ~/Desktop pdf
     # will show all files containing PDF
-    command gls -Flagh --color=always -v --author --time-style=long-iso "$1" | grep -i "$2" | less -R -X -F
+    command exa -FahT --icons --no-filesize --no-user --no-permissions --ignore-glob=.git --level=2 --time-style=long-iso "$1" | grep -i "$2" | less -R -X -F
+  elif [[ $# = 1 && $1 = "l" ]]; then
+    command exa -FlahT --git --icons --level=2 --time-style=long-iso
   else
     # any other number of inputs will just act normally
-    command gls -Flagh --color=always -v --author --time-style=long-iso "$@" | less -R -X -F
+    command exa -FahT --level=2 "$@" | less -R -X -F
   fi
 }
+
 # ---  end Better LS  ---
 
 function github {
@@ -103,6 +122,7 @@ function github {
     >&2 echo "Please supply a dirname, ex. 'github .' or 'github [dirname]'"
     exit 1
   fi
+
 
   # gh repo create monsters-data --private --source . --push
 }
