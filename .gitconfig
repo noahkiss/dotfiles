@@ -3,9 +3,27 @@
 	name = Noah Kiss
 [hub]
 	email = noah@noahkiss.com
+[github]
+	user = noahkiss
+[init]
+	defaultBranch = main
 [color]
 	ui = true
 [core]
 	editor = code
 [alias]
-	acp = "!f() { git commit -a -m \"$@\" && git push; }; f"
+	acp    = "!f() { git commit -a -m \"$@\" && git push; }; f"
+	a      = add
+	ca     = commit -a
+	cam    = commit -am
+	cm     = commit -m
+	s      = status
+	p      = push
+	pom    = push origin master
+	puom   = pull origin master
+	cob    = checkout -b
+	co     = checkout
+	fp     = fetch --prune --all
+	l      = log --oneline --decorate --graph
+	lall   = log --oneline --decorate --graph --all
+	ls     = log --oneline --decorate --graph --stat
