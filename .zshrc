@@ -67,6 +67,8 @@ eval "$(pyenv init -)"
 alias zshconfig="code ~/.zshrc"
 alias reload="source ~/.zshrc"
 
+alias cat="bat"
+
 alias git-remove-untracked="git fetch -p && git branch -v | grep -F '[gone]' | awk '{print $1}' | xargs git branch -D"
 alias cleanup="git fetch --prune origin && git remote prune origin && git-remove-untracked"
 
@@ -114,7 +116,6 @@ function ls {
     command exa -FahT --level=2 "$@" | less -R -X -F
   fi
 }
-
 # ---  end Better LS  ---
 
 function github {
@@ -123,6 +124,6 @@ function github {
     exit 1
   fi
 
-
+  echo "Not implemented"
   # gh repo create monsters-data --private --source . --push
 }
